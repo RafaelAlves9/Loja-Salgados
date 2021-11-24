@@ -19,7 +19,7 @@ header {
     top:0;
     right:0;
     height:60px;
-    background-color:#399ade;
+    background-color:rgba(253, 44, 44, 0.767);
     display:none;
     justify-content: flex-end;
     align-items: center;
@@ -27,7 +27,7 @@ header {
 .menu-openner {
     margin-right: 15px;
     font-size: 26px;
-    background-color: #a9dcff;
+    background-color: rgb(255, 210, 125);
     padding: 5px 20px;
     border-radius: 5px;
 }
@@ -51,7 +51,7 @@ aside {
 aside.show {
     width:30vw;
 }
-.cart--area {
+.cart-area {
     padding:20px;
 }
 main {
@@ -77,18 +77,18 @@ h1 {
     align-items:center;
     text-decoration: none;
 }
-.pizza-item--img {
+.pizza-item-img {
     width:200px;
     height:200px;
     background-color:#EEE;
     border-radius:100px;
     box-shadow:0px 10px 50px rgba(0, 0, 0, 0.2);
 }
-.pizza-item--img img {
+.pizza-item-img img {
     width:100%;
     height:auto;
 }
-.pizza-item--add {
+.pizza-item-add {
     width:50px;
     height:50px;
     line-height:50px;
@@ -101,21 +101,21 @@ h1 {
     margin-top:-25px;
     transition:all ease .2s;
 }
-.pizza-item a:hover .pizza-item--add {
+.pizza-item a:hover .pizza-item-add {
     background-color:#244c88;
 }
-.pizza-item--price {
+.pizza-item-price {
     font-size:15px;
     color:#333;
     margin-top:5px;
 }
-.pizza-item--name {
+.pizza-item-name {
     font-size:20px;
     font-weight: bold;
     color:#000;
     margin-top:5px;
 }
-.pizza-item--desc {
+.pizza-item-desc {
     font-size:13px;
     color:#555;
     margin-top:10px;
@@ -148,7 +148,7 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-.pizzaBig--back {
+.pizzaBig-back {
     position:absolute;
     width:30px;
     height:30px;
@@ -166,25 +166,25 @@ h1 {
 .pizzaInfo h1 {
     margin-top:50px;
 }
-.pizzaInfo .pizzaInfo--desc {
+.pizzaInfo .pizzaInfo-desc {
     font-size:15px;
     color:#999;
     margin-top:10px;
     font-family:'Lato',Helvetica,Arial;
 }
-.pizzaInfo--sector {
+.pizzaInfo-sector {
     color:#CCC;
     text-transform: uppercase;
     font-size:14px;
     margin-top:30px;
     margin-bottom:10px;
 }
-.pizzaInfo--sizes {
+.pizzaInfo-sizes {
     display:inline-flex;
     border-radius:10px;
     overflow:hidden;
 }
-.pizzaInfo--size {
+.pizzaInfo-size {
     padding:10px 15px;
     color:#000;
     background-color:#EEE;
@@ -192,36 +192,36 @@ h1 {
     font-weight: bold;
     cursor:pointer;
 }
-.pizzaInfo--size:hover {
+.pizzaInfo-size:hover {
     background-color:#CCC;
 }
-.pizzaInfo--size.selected {
+.pizzaInfo-size.selected {
     background-color:#399ade;
     color:#FFF;
 }
-.pizzaInfo--size.selected span {
+.pizzaInfo-size.selected span {
     color:#D6D6D6;
 }
-.pizzaInfo--size span {
+.pizzaInfo-size span {
     font-size:12px;
     color:#999;
     font-weight: normal;
 }
-.pizzaInfo--price {
+.pizzaInfo-price {
     display:flex;
     align-items:center;
 }
-.pizzaInfo--actualPrice {
+.pizzaInfo-actualPrice {
     font-size:28px;
     margin-right:30px;
 }
-.pizzaInfo--qtarea {
+.pizzaInfo-qtarea {
     display:inline-flex;
     background-color:#EEE;
     border-radius:10px;
     height:30px;
 }
-.pizzaInfo--qtarea button {
+.pizzaInfo-qtarea button {
     border:0;
     background-color:transparent;
     font-size:17px;
@@ -230,14 +230,14 @@ h1 {
     padding:0px 10px;
     color:#333;
 }
-.pizzaInfo--qt {
+.pizzaInfo-qt {
     line-height: 30px;
     font-size: 12px;
     font-weight: bold;
     padding: 0px 5px;
     color:#000;
 }
-.pizzaInfo--addButton {
+.pizzaInfo-addButton {
     margin-top:30px;
     padding:20px 30px;
     border-radius:20px;
@@ -247,14 +247,14 @@ h1 {
     cursor:pointer;
     margin-right:30px;
 }
-.pizzaInfo--addButton:hover {
+.pizzaInfo-addButton:hover {
     background-color:#32a345;
 }
-.pizzaInfo--cancelButton {
+.pizzaInfo-cancelButton {
     display:inline-block;
     cursor:pointer;
 }
-.pizzaInfo--cancelMobileButton {
+.pizzaInfo-cancelMobileButton {
     display:none;
     height:40px;
     text-align:center;
@@ -264,26 +264,26 @@ h1 {
 .cart {
     margin-bottom:20px;
 }
-.cart--item {
+.cart-item {
     display:flex;
     align-items:center;
     margin:10px 0;
 }
-.cart--item img {
+.cart-item img {
     width:40px;
     height:40px;
     margin-right:20px;
 }
-.cart--item-nome {
+.cart-item-nome {
     flex:1;
 }
-.cart--item--qtarea {
+.cart-item-qtarea {
     display:inline-flex;
     background-color:#EEE;
     border-radius:10px;
     height:30px;
 }
-.cart--item--qtarea button {
+.cart-item-qtarea button {
     border:0;
     background-color:transparent;
     font-size:17px;
@@ -292,14 +292,14 @@ h1 {
     padding:0px 10px;
     color:#333;
 }
-.cart--item--qt {
+.cart-item-qt {
     line-height: 30px;
     font-size: 12px;
     font-weight: bold;
     padding: 0px 5px;
     color:#000;
 }
-.cart--totalitem {
+.cart-totalitem {
     padding:15px 0;
     border-top:1px solid #79b9dd;
     color:#315970;
@@ -307,15 +307,15 @@ h1 {
     justify-content: space-between;
     font-size:15px;
 }
-.cart--totalitem span:first-child {
+.cart-totalitem span:first-child {
     font-weight: bold;
 }
-.cart--totalitem.big {
+.cart-totalitem.big {
     font-size:20px;
     color:#000;
     font-weight: bold;
 }
-.cart--finalizar {
+.cart-finalizar {
     padding:20px 30px;
     border-radius:20px;
     background-color:#48d05f;
@@ -326,7 +326,7 @@ h1 {
     border:2px solid #63f77c;
     transition: all ease .2s;
 }
-.cart--finalizar:hover {
+.cart-finalizar:hover {
     background-color:#35af4a;
 }
 
@@ -365,7 +365,7 @@ h1 {
     aside.show {
         width:auto;
     }
-    .cart--area {
+    .cart-area {
         width:100vw;
     }
 
@@ -396,28 +396,28 @@ h1 {
         margin-top:20px;
     }
 
-    .pizzaInfo--qtarea {
+    .pizzaInfo-qtarea {
         height:60px;
     }
-    .pizzaInfo--qtarea button {
+    .pizzaInfo-qtarea button {
         font-size:25px;
         padding:0px 25px;
     }
-    .pizzaInfo--qt {
+    .pizzaInfo-qt {
         line-height: 60px;
         font-size:20px;
     }
-    .pizzaInfo--addButton {
+    .pizzaInfo-addButton {
         font-size:20px;
         display:block;
         text-align:center;
         margin:30px auto;
     }
 
-    .pizzaInfo--cancelButton {
+    .pizzaInfo-cancelButton {
         display:none;
     }
-    .pizzaInfo--cancelMobileButton {
+    .pizzaInfo-cancelMobileButton {
         display:block;
     }
 }
