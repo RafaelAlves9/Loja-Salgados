@@ -172,6 +172,41 @@ h1 {
     margin-top:10px;
     font-family:'Lato',Helvetica,Arial;
 }
+.salgadoInfo-sector {
+    color:#CCC;
+    text-transform: uppercase;
+    font-size:14px;
+    margin-top:30px;
+    margin-bottom:10px;
+}
+.salgadoInfo-sizes {
+    display:inline-flex;
+    border-radius:10px;
+    overflow:hidden;
+}
+.salgadoInfo-size {
+    padding:10px 15px;
+    color:#000;
+    background-color:#EEE;
+    font-size:13px;
+    font-weight: bold;
+    cursor:pointer;
+}
+.salgadoInfo-size:hover {
+    background-color:#CCC;
+}
+.salgadoInfo-size.selected {
+    background-color:#399ade;
+    color:#FFF;
+}
+.salgadoInfo-size.selected span {
+    color:#D6D6D6;
+}
+.salgadoInfo-size span {
+    font-size:12px;
+    color:#999;
+    font-weight: normal;
+}
 .salgadoInfo-price {
     display:flex;
     align-items:center;
