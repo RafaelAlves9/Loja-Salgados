@@ -8,6 +8,7 @@ salgadoJson.map((item, index)=>{
     // adicionando estruturas na tela
     d('.salgado-area').append(salgadoItem)
 
+    // adicionando informações
     salgadoItem.querySelector('.salgado-item-img img').src = item.img
     salgadoItem.querySelector('.salgado-item-price').innerHTML = `R$ ${item.price.toFixed(2)}`
     salgadoItem.querySelector('.salgado-item-name').innerHTML = item.name
