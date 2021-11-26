@@ -1,5 +1,4 @@
 const d = (e)=> document.querySelector(e)
-const dAll = (e)=> document.querySelectorAll(e)
 
 //relacionando dados
 salgadoJson.map((item, index)=>{
