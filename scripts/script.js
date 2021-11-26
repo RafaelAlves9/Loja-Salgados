@@ -5,11 +5,12 @@ const dAll = (e)=> document.querySelectorAll(e)
 salgadoJson.map((item, index)=>{
     const salgadoItem = d('.models .salgado-item').cloneNode(true)
 
+    // adicionando estruturas na tela
+    d('.salgado-area').append(salgadoItem)
+
     salgadoItem.querySelector('.salgado-item-img img').src = item.img
     salgadoItem.querySelector('.salgado-item-price').innerHTML = `R$ ${item.price.toFixed(2)}`
     salgadoItem.querySelector('.salgado-item-name').innerHTML = item.name
     salgadoItem.querySelector('.salgado-item-desc').innerHTML = item.description
 
-    // adicionando estrutura na tela
-    d('.salgado-area').append(salgadoItem)
 })
