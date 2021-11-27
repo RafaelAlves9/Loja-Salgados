@@ -3,8 +3,7 @@ const salgadoJson = [
     name:'Coxinha',
     img:'images/coxinha.png',
     price:22.50,
-    sizes:['50 unidades'],
-    description:'Descrição da salgado em mais de uma linha muito legal bem interessante'},
+    sizes:['50 unidades']},
 
     {id:2, 
     name:'Bolinha de queijo', 
