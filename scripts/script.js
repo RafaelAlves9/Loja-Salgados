@@ -11,7 +11,7 @@ salgadoJson.map((item, index)=>{
     salgadoItem.querySelector('.salgado-item-img img').src = item.img
     salgadoItem.querySelector('.salgado-item-price').innerHTML = `R$ ${item.price.toFixed(2)}`;
     salgadoItem.querySelector('.salgado-item-name').innerHTML = item.name
-    salgadoItem.querySelector('.salgado-item-desc').innerHTML = item.description
+    
 
     //aparecendo janela de escolha
     salgadoItem.querySelector('a').addEventListener('click', (e)=>{

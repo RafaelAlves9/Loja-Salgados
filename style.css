@@ -115,12 +115,6 @@ h1 {
     color:#000;
     margin-top:5px;
 }
-.salgado-item-desc {
-    font-size:13px;
-    color:#555;
-    margin-top:10px;
-}
-
 .salgadoWindowArea {
     position:fixed;
     left:0;
@@ -165,12 +159,6 @@ h1 {
 }
 .salgadoInfo h1 {
     margin-top:50px;
-}
-.salgadoInfo .salgadoInfo-desc {
-    font-size:15px;
-    color:#999;
-    margin-top:10px;
-    font-family:'Lato',Helvetica,Arial;
 }
 .salgadoInfo-price {
     display:flex;
