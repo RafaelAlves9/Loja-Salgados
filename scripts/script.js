@@ -1,4 +1,6 @@
 const d = (e)=> document.querySelector(e);
+const dAll = (e)=> document.querySelectorAll(e);
+let quant = 1;
 
 //relacionando dados
 salgadoJson.map((item, index)=>{
@@ -18,6 +20,7 @@ salgadoJson.map((item, index)=>{
     salgadoItem.querySelector('a').addEventListener('click', (e)=>{
         e.preventDefault();
         d('.salgadoWindowArea').style.display='flex';
+        quant = 1;
         const key = e.target.closest('.salgado-item').getAttribute('data-key');
 
         //adicionando inf window
@@ -25,5 +28,15 @@ salgadoJson.map((item, index)=>{
         d('.salgadoInfo h1').innerHTML = salgadoJson[key].name;
         d('.salgadoInfo-actualPrice').innerHTML = `R$ ${salgadoJson[key].price.toFixed(2)}`;
         d('.salgadoInfo-size').innerHTML = salgadoJson[key].sizes;
+        d('.salgadoInfo-qt').innerHTML = quant
     })
+})
+
+//fechando o Window
+function closeWindow(){
+    d('.salgadoWindowArea').style.display='none';
+}
+
+dAll('.salgadoInfo-cancelMobileButton, .salgadoInfo-cancelButton').forEach((e)=>{
+    e.addEventListener('click', closeWindow)
 })

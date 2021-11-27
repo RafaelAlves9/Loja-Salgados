@@ -43,7 +43,7 @@ const salgadoJson = [
 
     {id:7,
     name:'Variados',
-    img:'images/todos.png',
+    img:'images/diversos.png',
     price:25.50,
     sizes:['50 unidades'],
     desc:'50 Unidades'},
