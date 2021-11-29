@@ -33,10 +33,20 @@ salgadoJson.map((item, index)=>{
 })
 
 //fechando o Window
-function closeWindow(){
-    d('.salgadoWindowArea').style.display='none';
-}
-
 dAll('.salgadoInfo-cancelMobileButton, .salgadoInfo-cancelButton').forEach((e)=>{
-    e.addEventListener('click', closeWindow)
+    e.addEventListener('click', (e)=>{
+        d('.salgadoWindowArea').style.display='none';
+    })
+})
+
+//aumentando/diminuindo quantidade
+d('.salgadoInfo-qtmais').addEventListener('click', (e)=>{
+    quant++
+    d('.salgadoInfo-qt').innerHTML = quant
+})
+d('.salgadoInfo-qtmenos').addEventListener('click', (e)=>{
+    if (quant > 1){
+        quant--
+        d('.salgadoInfo-qt').innerHTML = quant
+    }
 })
