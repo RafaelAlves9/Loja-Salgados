@@ -1,12 +1,15 @@
-const d = (e)=> document.querySelector(e);
-const dAll = (e)=> document.querySelectorAll(e);
+//valores gerais
+const d = (e)=> document.querySelector(e)
+const dAll = (e)=> document.querySelectorAll(e)
 let quant = 1;
+let modalKey = 0
+let itemCart = 0
 
 //relacionando dados
 salgadoJson.map((item, index)=>{
-    const salgadoItem = d('.models .salgado-item').cloneNode(true);
+    const salgadoItem = d('.models .salgado-item').cloneNode(true)
     //adicionando estruturas na tela
-    d('.salgado-area').append(salgadoItem);
+    d('.salgado-area').append(salgadoItem)
 
     //adicionando informações
     salgadoItem.setAttribute('data-key', index);
@@ -22,6 +25,7 @@ salgadoJson.map((item, index)=>{
         d('.salgadoWindowArea').style.display='flex';
         quant = 1;
         const key = e.target.closest('.salgado-item').getAttribute('data-key');
+        modalKey = key
 
         //adicionando inf window
         d('.salgadoBig img').src = salgadoJson[key].img;
@@ -49,4 +53,18 @@ d('.salgadoInfo-qtmenos').addEventListener('click', (e)=>{
         quant--
         d('.salgadoInfo-qt').innerHTML = quant
     }
+})
+
+//carrinho de compras
+let cart = []
+
+//adicionando no carrinho
+d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
+   itemCart++
+   d('.menu-openner span').innerHTML = itemCart
+    cart.push({
+        id:salgadoJson[modalKey].id,
+        qt:quant
+    })
+    d('.salgadoWindowArea').style.display='none'
 })
