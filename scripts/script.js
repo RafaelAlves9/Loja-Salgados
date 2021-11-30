@@ -77,7 +77,7 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
             id:salgadoJson[modalKey].id,
             qt:quant})
     }
-     //contador carrinho - mobile
+     //contador do carrinho - mobile
    itemCart++;
    d('.menu-openner span').innerHTML = itemCart;
     //fechando janela
