@@ -18,7 +18,6 @@ salgadoJson.map((item, index)=>{
     salgadoItem.querySelector('.salgado-item-name').innerHTML = item.name;
     salgadoItem.querySelector('.salgado-item-desc').innerHTML = item.desc;
     
-
     //aparecendo janela de escolha
     salgadoItem.querySelector('a').addEventListener('click', (e)=>{
         e.preventDefault();
@@ -58,13 +57,29 @@ d('.salgadoInfo-qtmenos').addEventListener('click', (e)=>{
 //carrinho de compras
 let cart = []
 
-//adicionando no carrinho
+//adicionando ao carrinho
 d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
-   itemCart++
-   d('.menu-openner span').innerHTML = itemCart
+    //checar se ja existe o item no carrinho
+   let identifier = salgadoJson[modalKey].id;
+   let key = cart.findIndex((item)=> item.identifier = identifier);
+   //se ja exitir:apenas aumentar a quantidade
+   if(key > -1){
+    let msg = confirm('Este produto já foi selecionado ao carrinho, deseja adicionar à quantidade?');
+        if (msg == true){
+            cart[key].qt += quant;
+        } else{
+            d('.salgadoWindowArea').style.display='none';
+        }
+   } else {
+   //se nao: adicionar item ao carrinho
     cart.push({
+        identifier,
         id:salgadoJson[modalKey].id,
         qt:quant
-    })
-    d('.salgadoWindowArea').style.display='none'
+    })}
+    //contador carrinho - mobile
+   itemCart++;
+   d('.menu-openner span').innerHTML = itemCart;
+    //fechando janela
+    d('.salgadoWindowArea').style.display='none';
 })
