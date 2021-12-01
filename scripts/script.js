@@ -91,11 +91,15 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
 function openCart(){
     if (cart.length > 0){
         d('aside').classList.add('show')
+        d('.cart').innerHTML=''
         for(let i in cart){
             let salgadoItem = salgadoJson.find((item)=> item.id == cart[i].id)
-
             let cartItem = d('.cart-item').cloneNode(true)
             d('.cart').append(cartItem)
+            //adicionando informacoes
+            cartItem.querySelector('img').src = salgadoItem.img
+            cartItem.querySelector('.cart-item-nome').innerHTML = salgadoItem.name 
+            cartItem.querySelector('.cart-item-qt').innerHTML = cart[i].qt
         }
         } else {
         d('aside').classList.remove('show')
