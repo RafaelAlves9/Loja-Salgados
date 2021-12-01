@@ -89,13 +89,13 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
 function openCart(){
     if (cart.length > 0){
         d('aside').classList.add('show')
-        let salgadoItem = salgadoJson.find((item)=> item.id == cart[i].id)
+        for(let i in cart){
+            let salgadoItem = salgadoJson.find((item)=> item.id == cart[i].id)
 
-        let cartItem = d('.models .cart-item').cloneNode(true)
-        
-
-
-    } else {
+            let cartItem = d('.cart-item').cloneNode(true)
+            d('.cart').append(cartItem)
+        }
+        } else {
         d('aside').classList.remove('show')
     }
 }
