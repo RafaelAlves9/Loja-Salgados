@@ -30,9 +30,9 @@ salgadoJson.map((item, index)=>{
         //adicionando inf window
         d('.salgadoBig img').src = salgadoJson[key].img;
         d('.salgadoInfo h1').innerHTML = salgadoJson[key].name;
+        d('.salgadoInfo-qt').innerHTML = quant
         d('.salgadoInfo-actualPrice').innerHTML = `R$ ${salgadoJson[key].price.toFixed(2)}`;
         d('.salgadoInfo-size').innerHTML = salgadoJson[key].sizes;
-        d('.salgadoInfo-qt').innerHTML = quant
     })
 })
 
@@ -80,26 +80,28 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
             id:salgadoJson[modalKey].id,
             qt:quant})
     }
-    //contador do carrinho - mobile
-    
     //fechando janela
     closeW()
     //abrindo carrinho na tela
     openCart()
 })
+    
 
+//abrindo tela de carrinho
 function openCart(){
     if (cart.length > 0){
         d('aside').classList.add('show')
-        d('.cart').innerHTML=''
+        d('.cart').innerHTML=''//nao repetindo o msm item
+        d('.menu-openner span').innerHTML = cart.length//contador do carrinho - mobile
+
         for(let i in cart){
-            let salgadoItem = salgadoJson.find((item)=> item.id == cart[i].id)
+            let salgadoItem = salgadoJson.find((item)=> item.id == cart[i].id)//relacionando IDs
             let cartItem = d('.cart-item').cloneNode(true)
             d('.cart').append(cartItem)
-            //adicionando informacoes
+            //adicionando informacoes no carrinho
             cartItem.querySelector('img').src = salgadoItem.img
-            cartItem.querySelector('.cart-item-nome').innerHTML = salgadoItem.name 
-            cartItem.querySelector('.cart-item-qt').innerHTML = cart[i].qt
+            cartItem.querySelector('.cart-item-nome').innerHTML = salgadoItem.name
+            cartItem.querySelector('.cart-item-qt').innerHTML = cart[i].qt    
         }
         } else {
         d('aside').classList.remove('show')
