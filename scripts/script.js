@@ -1,10 +1,10 @@
 //valores gerais
 const d = (e)=> document.querySelector(e)
 const dAll = (e)=> document.querySelectorAll(e)
-const closeW =  d('.salgadoWindowArea').style.display='none'
 let quant = 1
 let modalKey = 0
 let itemCart = 0
+function closeW() { d('.salgadoWindowArea').style.display='none' }
 
 //relacionando dados
 salgadoJson.map((item, index)=>{
@@ -39,7 +39,7 @@ salgadoJson.map((item, index)=>{
 //fechando o Window
 dAll('.salgadoInfo-cancelMobileButton, .salgadoInfo-cancelButton').forEach((e)=>{
     e.addEventListener('click', (e)=>{
-        closeW;
+        closeW()
     })
 })
 
@@ -56,7 +56,7 @@ d('.salgadoInfo-qtmenos').addEventListener('click', (e)=>{
 })
 
 //carrinho de compras
-let cart = []
+var cart = []
 
 //adicionando ao carrinho
 d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
@@ -69,7 +69,7 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
         if(msg == true){
                 cart[key].qt += quant}
             else{
-                closeW
+                closeW()
             }
    } else {
    //se nao: adicionar item ao carrinho
@@ -78,9 +78,18 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
             id:salgadoJson[modalKey].id,
             qt:quant})
     }
-     //contador do carrinho - mobile
-   itemCart++;
-   d('.menu-openner span').innerHTML = itemCart;
+    //contador do carrinho - mobile
+    
     //fechando janela
-    closeW
+    closeW()
+    //abrindo carrinho na tela
+    openCart()
 })
+
+function openCart(){
+    if (cart.length > 0){
+        d('aside').classList.add('show') 
+    } else {
+        d('aside').classList.remove('show') 
+    }
+}

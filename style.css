@@ -45,7 +45,7 @@ header {
     font-size: 30px;
 }
 aside {
-    background-color:#9ccbe6;
+    background-color: #EDE3D5;
     width:0vw;
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .2s;
@@ -319,7 +319,9 @@ h1 {
     background-color:#35af4a;
 }
 footer{
-    height: fit-content;
+    background-color: black;
+    color: white;
+    height: 20px;
     text-align: center;
 }
 
