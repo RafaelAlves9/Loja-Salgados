@@ -1,7 +1,8 @@
 //valores gerais
 const d = (e)=> document.querySelector(e)
 const dAll = (e)=> document.querySelectorAll(e)
-let quant = 1;
+const closeW =  d('.salgadoWindowArea').style.display='none'
+let quant = 1
 let modalKey = 0
 let itemCart = 0
 
@@ -38,7 +39,7 @@ salgadoJson.map((item, index)=>{
 //fechando o Window
 dAll('.salgadoInfo-cancelMobileButton, .salgadoInfo-cancelButton').forEach((e)=>{
     e.addEventListener('click', (e)=>{
-        d('.salgadoWindowArea').style.display='none';
+        closeW;
     })
 })
 
@@ -64,12 +65,12 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
    let key = cart.findIndex((item)=> item.identifier == identifier);
    //se ja exitir:apenas aumentar a quantidade
    if(key > -1){
-    let msg = confirm('Este item já está no carrinho, deseja adicionar mais quantidade?')
-       if(msg == true){
-        cart[key].qt += quant}
-        else{
-        d('.salgadoWindowArea').style.display='none';
-        }
+        const msg = confirm('Este item já está no carrinho, deseja adicionar mais quantidade?')
+        if(msg == true){
+                cart[key].qt += quant}
+            else{
+                closeW
+            }
    } else {
    //se nao: adicionar item ao carrinho
         cart.push({
@@ -81,5 +82,5 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
    itemCart++;
    d('.menu-openner span').innerHTML = itemCart;
     //fechando janela
-    d('.salgadoWindowArea').style.display='none';
+    closeW
 })
