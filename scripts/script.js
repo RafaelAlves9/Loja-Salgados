@@ -52,6 +52,8 @@ d('.salgadoInfo-qtmenos').addEventListener('click', (e)=>{
     if (quant > 1){
         quant--
         d('.salgadoInfo-qt').innerHTML = quant
+    } else { //fechando a janela caso (quant<1)
+        closeW()
     }
 })
 
