@@ -92,7 +92,7 @@ function openCart(){
         let salgadoItem = salgadoJson.find((item)=> item.id == cart[i].id)
 
         let cartItem = d('.models .cart-item').cloneNode(true)
-
+        
 
 
     } else {
