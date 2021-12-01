@@ -56,7 +56,7 @@ d('.salgadoInfo-qtmenos').addEventListener('click', (e)=>{
 })
 
 //carrinho de compras
-var cart = []
+let cart = []
 
 //adicionando ao carrinho
 d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
@@ -88,8 +88,9 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
 
 function openCart(){
     if (cart.length > 0){
-        d('aside').classList.add('show') 
+        d('aside').classList.add('show')
+
     } else {
-        d('aside').classList.remove('show') 
+        d('aside').classList.remove('show')
     }
 }

@@ -22,7 +22,7 @@ header {
     top:0;
     right:0;
     height:60px;
-    background-color: #EDE3D5;
+    background-color: #F4CC93;
     display:none;
     justify-content: flex-end;
     align-items: center;
@@ -45,7 +45,7 @@ header {
     font-size: 30px;
 }
 aside {
-    background-color: #EDE3D5;
+    background-color: #F4CC93;
     width:0vw;
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .2s;
@@ -129,7 +129,7 @@ h1 {
     top:0;
     bottom:0;
     right:0;
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:rgba(255, 255, 255, 0.37);
     display:none;
     transition: all ease .5s;
     justify-content: center;
@@ -138,7 +138,7 @@ h1 {
 }
 .salgadoWindowBody {
     width:900px;
-    background-color:#FFF;
+    background-color:#fff;
     border-radius:10px;
     box-shadow:0px 0px 15px #999;
     display:flex;
@@ -319,10 +319,10 @@ h1 {
     background-color:#35af4a;
 }
 footer{
-    background-color: black;
-    color: white;
+    background-color: #F4CC93;
     height: 20px;
     text-align: center;
+    border-top: 1px solid black;
 }
 
 
