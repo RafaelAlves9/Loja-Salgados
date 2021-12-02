@@ -84,20 +84,27 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
     closeW()
     //abrindo carrinho na tela
     openCart()
+    //contador do carrinho - mobile
+    d('.menu-openner span').innerHTML = cart.length
 })
-
 
 //abrindo e configurando tela do carrinho
 function openCart(){
     if (cart.length > 0){
         d('aside').classList.add('show')
         d('.cart').innerHTML=''//nao repetindo o msm item
-        d('.menu-openner span').innerHTML = cart.length//contador do carrinho - mobile
+        
+        let subtotal = 0
+        let desconto = 0
+        let total = 0
 
         for(let i in cart){
             let salgadoItem = salgadoJson.find((item)=> item.id == cart[i].id)//relacionando IDs
             let cartItem = d('.cart-item').cloneNode(true)//pegando arquivo html
             d('.cart').append(cartItem)
+
+            subtotal += salgadoItem.price * cart[i].qt
+
             //adicionando informacoes no carrinho
             cartItem.querySelector('img').src = salgadoItem.img
             cartItem.querySelector('.cart-item-nome').innerHTML = salgadoItem.name
@@ -113,11 +120,15 @@ function openCart(){
                 if(cart[i].qt > 1){
                     cart[i].qt--
                 } else {
-                    cart.splice(i, 1)//
+                    cart.splice(i, 1)
                 }
                 openCart()
             })
         }
+
+        desconto = 0.1 * subtotal
+        total = subtotal - desconto
+
         } else {
         d('aside').classList.remove('show')
     }
