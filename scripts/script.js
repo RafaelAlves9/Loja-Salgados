@@ -85,9 +85,9 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
     //abrindo carrinho na tela
     openCart()
 })
-    
 
-//abrindo tela de carrinho
+
+//abrindo e configurando tela do carrinho
 function openCart(){
     if (cart.length > 0){
         d('aside').classList.add('show')
@@ -96,22 +96,24 @@ function openCart(){
 
         for(let i in cart){
             let salgadoItem = salgadoJson.find((item)=> item.id == cart[i].id)//relacionando IDs
-            let cartItem = d('.cart-item').cloneNode(true)
+            let cartItem = d('.cart-item').cloneNode(true)//pegando arquivo html
             d('.cart').append(cartItem)
             //adicionando informacoes no carrinho
             cartItem.querySelector('img').src = salgadoItem.img
             cartItem.querySelector('.cart-item-nome').innerHTML = salgadoItem.name
             cartItem.querySelector('.cart-item-qt').innerHTML = cart[i].qt
             
+            //aumentando a quantidade dentro carrinho
             cartItem.querySelector('.cart-item-qtmais').addEventListener('click',(e)=>{
                 cart[i].qt++
                 openCart()
             })
+            //removendo a quantidade dentro carrinho
             cartItem.querySelector('.cart-item-qtmenos').addEventListener('click',(e)=>{
                 if(cart[i].qt > 1){
                     cart[i].qt--
                 } else {
-                    cart[i].remove(i)
+                    cart.splice(i, 1)//
                 }
                 openCart()
             })
