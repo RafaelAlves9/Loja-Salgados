@@ -101,7 +101,20 @@ function openCart(){
             //adicionando informacoes no carrinho
             cartItem.querySelector('img').src = salgadoItem.img
             cartItem.querySelector('.cart-item-nome').innerHTML = salgadoItem.name
-            cartItem.querySelector('.cart-item-qt').innerHTML = cart[i].qt    
+            cartItem.querySelector('.cart-item-qt').innerHTML = cart[i].qt
+            
+            cartItem.querySelector('.cart-item-qtmais').addEventListener('click',(e)=>{
+                cart[i].qt++
+                openCart()
+            })
+            cartItem.querySelector('.cart-item-qtmenos').addEventListener('click',(e)=>{
+                if(cart[i].qt > 1){
+                    cart[i].qt--
+                } else {
+                    cart[i].remove(i)
+                }
+                openCart()
+            })
         }
         } else {
         d('aside').classList.remove('show')

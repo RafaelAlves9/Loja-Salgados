@@ -47,4 +47,5 @@ const salgadoJson = [
     price:25.50,
     sizes:['50 unidades'],
     desc:'50 Unidades'},
+
 ]
