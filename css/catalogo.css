@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color:#FFF4E6;
+    background-color:#FC880B;
     font-family:'Lato',Helvetica,Arial;
     font-size:15px;
     margin:0;
@@ -22,7 +22,7 @@ header {
     top:0;
     right:0;
     height:60px;
-    background-color: #F4CC93;
+    background-color: #F8442F;
     display:none;
     justify-content: flex-end;
     align-items: center;
@@ -30,7 +30,7 @@ header {
 .menu-openner {
     margin-right: 15px;
     font-size: 26px;
-    background-color: #F0C790;
+    background-color: #FC880B;
     padding: 5px 20px;
     border-radius: 5px;
     cursor:pointer;
@@ -45,7 +45,7 @@ header {
     font-size: 30px;
 }
 aside {
-    background-color: #79c6dd;
+    background-color: #EF1371;
     width:0vw;
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .2s;
@@ -319,10 +319,12 @@ h1 {
     background-color:#35af4a;
 }
 footer{
-    background-color: #F4CC93;
-    height: 20px;
-    text-align: center;
-    border-top: 1px solid black;
+    background-color: black;
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
