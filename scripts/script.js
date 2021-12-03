@@ -125,7 +125,7 @@ function openCart(){
                 openCart()
             })
         }
-
+        
         desconto = 0.1 * subtotal
         total = subtotal - desconto
 
