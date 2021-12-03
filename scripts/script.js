@@ -93,7 +93,7 @@ function openCart(){
     if (cart.length > 0){
         d('aside').classList.add('show')
         d('.cart').innerHTML=''//nao repetindo o msm item
-        
+
         let subtotal = 0
         let desconto = 0
         let total = 0
@@ -104,7 +104,7 @@ function openCart(){
             d('.cart').append(cartItem)
 
             subtotal += salgadoItem.price * cart[i].qt
-
+            
             //adicionando informacoes no carrinho
             cartItem.querySelector('img').src = salgadoItem.img
             cartItem.querySelector('.cart-item-nome').innerHTML = salgadoItem.name

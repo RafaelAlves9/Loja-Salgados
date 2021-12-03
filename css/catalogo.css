@@ -22,7 +22,7 @@ header {
     top:0;
     right:0;
     height:60px;
-    background-color: #F8442F;
+    background-color: #FFB84E;
     display:none;
     justify-content: flex-end;
     align-items: center;
@@ -45,7 +45,7 @@ header {
     font-size: 30px;
 }
 aside {
-    background-color: #EF1371;
+    background-color: #FFB84E;
     width:0vw;
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .2s;
