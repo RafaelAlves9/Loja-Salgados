@@ -316,6 +316,7 @@ h1 {
     margin-top:20px;
     border:2px solid #63f77c;
     transition: all ease .2s;
+    text-decoration: none;
 }
 .cart-finalizar:hover {
     background-color:#35af4a;
