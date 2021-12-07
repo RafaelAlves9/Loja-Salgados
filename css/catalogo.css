@@ -332,7 +332,6 @@ footer{
     align-items: center;
 }
 
-
 @media (max-width:1000px) {
     .salgado-area {
         grid-template-columns: repeat(2, 1fr);

@@ -156,4 +156,3 @@ function openCart(){
         d('aside').style.left = '100vw'
     }
 }
-
