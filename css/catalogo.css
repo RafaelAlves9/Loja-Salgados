@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: #FFC920;
+    background: linear-gradient(to right, #FFC920, #FA0A6A 98%);
     font-family:'Lato',Helvetica,Arial;
     font-size:15px;
     margin:0;
