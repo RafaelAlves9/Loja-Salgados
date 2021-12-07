@@ -310,13 +310,15 @@ h1 {
     padding:20px 30px;
     border-radius:20px;
     background-color:#48d05f;
-    color:#FFF;
     cursor:pointer;
     text-align:center;
     margin-top:20px;
     border:2px solid #63f77c;
     transition: all ease .2s;
+}
+.cart-finalizar a{
     text-decoration: none;
+    color:#FFF;
 }
 .cart-finalizar:hover {
     background-color:#35af4a;
