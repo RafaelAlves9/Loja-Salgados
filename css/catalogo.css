@@ -51,6 +51,7 @@ aside {
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .2s;
     overflow-x:hidden;
+    border-left: solid 1px rgba(0, 0, 0, 0.144);
 }
 aside.show {
     width:30vw;
