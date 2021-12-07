@@ -17,7 +17,7 @@ salgadoJson.map((item, index)=>{
     salgadoItem.querySelector('.salgado-item-img img').src = item.img;
     salgadoItem.querySelector('.salgado-item-price').innerHTML = `R$ ${item.price.toFixed(2)}`;
     salgadoItem.querySelector('.salgado-item-name').innerHTML = item.name;
-    salgadoItem.querySelector('.salgado-item-desc').innerHTML = item.desc;
+    salgadoItem.querySelector('.salgado-item-desc').innerHTML = `${item.sizes} unidades`;
     
     //aparecendo janela de escolha
     salgadoItem.querySelector('a').addEventListener('click', (e)=>{
@@ -32,7 +32,7 @@ salgadoJson.map((item, index)=>{
         d('.salgadoInfo h1').innerHTML = salgadoJson[key].name;
         d('.salgadoInfo-qt').innerHTML = quant
         d('.salgadoInfo-actualPrice').innerHTML = `R$ ${salgadoJson[key].price.toFixed(2)}`;
-        d('.salgadoInfo-size').innerHTML = salgadoJson[key].sizes;
+        d('.salgadoInfo-size').innerHTML = `${salgadoJson[key].sizes} unidades`;
     })
 })
 
@@ -84,25 +84,41 @@ d('.salgadoInfo-addButton').addEventListener('click', (e)=>{
     closeW()
     //abrindo carrinho na tela
     openCart()
-    //contador do carrinho - mobile
-    d('.menu-openner span').innerHTML = cart.length
+})
+
+//abrindo carrinho no mobile
+d('.menu-openner').addEventListener('click',()=>{
+    if (cart.length > 0){
+        d('aside').style.left = '0'
+    }
+})
+//fechando carrinho no mobile
+d('.menu-closer').addEventListener('click',()=>{
+    d('aside').style.left = '100vw'
 })
 
 //abrindo e configurando tela do carrinho
 function openCart(){
+    //contador do carrinho - mobile
+    d('.menu-openner span').innerHTML = cart.length
+
     if (cart.length > 0){
         d('aside').classList.add('show')
         d('.cart').innerHTML=''//nao repetindo o msm item
 
+        //definindo o valor inicial
         let subtotal = 0
         let desconto = 0
         let total = 0
+        let unidades = 0
 
         for(let i in cart){
             let salgadoItem = salgadoJson.find((item)=> item.id == cart[i].id)//relacionando IDs
             let cartItem = d('.cart-item').cloneNode(true)//pegando arquivo html
             d('.cart').append(cartItem)
 
+            //operações de unidades e subtotal
+            unidades += salgadoItem.sizes * cart[i].qt
             subtotal += salgadoItem.price * cart[i].qt
             
             //adicionando informacoes no carrinho
@@ -115,6 +131,7 @@ function openCart(){
                 cart[i].qt++
                 openCart()
             })
+
             //removendo a quantidade dentro carrinho
             cartItem.querySelector('.cart-item-qtmenos').addEventListener('click',(e)=>{
                 if(cart[i].qt > 1){
@@ -125,11 +142,18 @@ function openCart(){
                 openCart()
             })
         }
-        
+
+        //valores carrinho
         desconto = 0.1 * subtotal
         total = subtotal - desconto
+        d('.subtotal span:last-child').innerHTML = `R$ ${subtotal.toFixed(2)}`
+        d('.unidades span:last-child').innerHTML = `${unidades} unidades`
+        d('.desconto span:last-child').innerHTML = `R$ ${desconto.toFixed(2)}`
+        d('.total span:last-child').innerHTML = `R$ ${total.toFixed(2)}`
 
         } else {
         d('aside').classList.remove('show')
+        d('aside').style.left = '100vw'
     }
 }
+

@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color:#FC880B;
+    background-color: #FFC920;
     font-family:'Lato',Helvetica,Arial;
     font-size:15px;
     margin:0;
@@ -22,7 +22,7 @@ header {
     top:0;
     right:0;
     height:60px;
-    background-color: #FFB84E;
+    background-color: #FA0A6A;
     display:none;
     justify-content: flex-end;
     align-items: center;
@@ -30,7 +30,7 @@ header {
 .menu-openner {
     margin-right: 15px;
     font-size: 26px;
-    background-color: #FC880B;
+    background-color: #FFC920;
     padding: 5px 20px;
     border-radius: 5px;
     cursor:pointer;
@@ -43,9 +43,10 @@ header {
     height:32px;
     display:none;
     font-size: 30px;
+    cursor:pointer;
 }
 aside {
-    background-color: #FFB84E;
+    background-color: #FA0A6A;
     width:0vw;
     font-family:'Hepta Slab', Helvetica, Arial;
     transition:all ease .2s;
@@ -290,8 +291,8 @@ h1 {
 }
 .cart-totalitem {
     padding:15px 0;
-    border-top:1px solid #79b9dd;
-    color:#315970;
+    border-top:1px solid rgba(255, 255, 255, 0.753);
+    color:rgba(0, 0, 0, 0.829);
     display:flex;
     justify-content: space-between;
     font-size:15px;
